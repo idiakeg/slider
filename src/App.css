@@ -1,0 +1,156 @@
+.app {
+	width: 700px;
+	margin: 0 auto;
+	padding: 3rem;
+}
+
+/* header */
+header {
+	text-align: center;
+}
+
+header h1 {
+	color: var(--gray1);
+	position: relative;
+	display: inline-block;
+	margin: 0;
+}
+
+header h1::before {
+	content: "";
+	display: block;
+	background: var(--gold);
+	position: absolute;
+	height: 70%;
+	width: 0.4rem;
+	top: 5px;
+	left: -20%;
+	transform: rotate(20deg);
+}
+
+/* section */
+section {
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	height: 380px;
+	overflow: hidden;
+}
+
+button {
+	cursor: pointer;
+	border: none;
+	display: grid;
+	place-items: center;
+	padding: 0.3rem 0.1rem;
+	z-index: 34;
+	position: absolute;
+	top: 50%;
+	background-color: var(--gray2);
+}
+
+button svg {
+	font-size: 2.2rem;
+	color: #f3f3f3;
+}
+
+.right {
+	right: 0;
+}
+
+.left {
+	left: 0;
+}
+
+/* slider container */
+.slider__container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	top: 0;
+	left: 0;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+}
+
+img {
+	display: block;
+	width: 120px;
+	height: 120px;
+	object-fit: cover;
+	border-radius: 50%;
+	box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+}
+
+.name,
+.title {
+	margin: 0;
+}
+
+.name {
+	text-transform: uppercase;
+	color: var(--gold);
+	font-weight: 700;
+	margin: 1.8rem 0 0.3rem;
+}
+
+.title {
+	text-transform: capitalize;
+}
+
+.quote {
+	font-family: "Combo", cursive;
+	text-align: center;
+	width: 80%;
+}
+
+.slider__container span {
+	display: inline-block;
+	margin-top: 1rem;
+	font-size: 3.5rem;
+	color: var(--gold);
+}
+
+/* slider positions */
+.slider__container.default {
+	transform: translateX(100%);
+}
+
+.slider__container.active {
+	animation: active 0.3s ease forwards;
+}
+
+@keyframes active {
+	0% {
+		transform: translateX(-100%);
+		opacity: 0;
+	}
+
+	25% {
+		transform: translateX(-75%);
+		opacity: 0.25;
+	}
+
+	50% {
+		transform: translateX(-50%);
+		opacity: 0.5;
+	}
+
+	75% {
+		opacity: 0.75;
+	}
+
+	100% {
+		transform: translateX(0%);
+		opacity: 1;
+	}
+}
+
+.slider__container.previous {
+	transform: translateX(-100%);
+	opacity: 0;
+}
