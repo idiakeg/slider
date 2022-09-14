@@ -1,7 +1,6 @@
 .app {
-	width: 700px;
+	width: min(700px, 80vw);
 	margin: 0 auto;
-	padding: 3rem;
 }
 
 /* header */
@@ -51,7 +50,7 @@ button {
 }
 
 button svg {
-	font-size: 2.2rem;
+	font-size: calc(1.5rem + 1vw);
 	color: #f3f3f3;
 }
 
@@ -79,8 +78,8 @@ button svg {
 
 img {
 	display: block;
-	width: 120px;
-	height: 120px;
+	width: min(120px, 30vw);
+	height: min(120px, 30vw);
 	object-fit: cover;
 	border-radius: 50%;
 	box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
@@ -100,12 +99,15 @@ img {
 
 .title {
 	text-transform: capitalize;
+	font-weight: 500;
 }
 
 .quote {
 	font-family: "Combo", cursive;
 	text-align: center;
-	width: 80%;
+	width: 75%;
+	font-weight: 600;
+	color: #6e6e6e;
 }
 
 .slider__container span {
