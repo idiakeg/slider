@@ -1,8 +1,9 @@
 .app {
-	width: min(700px, 80vw);
-	margin: 0 auto;
+	width: 600px;
+	margin: 4rem auto 0;
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 	gap: 2rem;
 }
 
@@ -16,6 +17,7 @@ header h1 {
 	position: relative;
 	display: inline-block;
 	margin: 0;
+	font-size: calc(2rem + 1vw);
 }
 
 header h1::before {
@@ -30,25 +32,13 @@ header h1::before {
 	transform: rotate(20deg);
 }
 
-@media screen and (max-width: 1024px) {
-	.app {
-		gap: 0;
-	}
-
-	header {
-		margin-bottom: -2rem;
-	}
-}
-
 /* section */
 section {
-	position: relative;
 	display: flex;
 	justify-content: space-between;
-	width: 100%;
+	width: 500px;
 	height: 380px;
 	overflow: hidden;
-	padding: 2rem;
 }
 
 button {
@@ -61,39 +51,70 @@ button {
 	position: absolute;
 	top: 50%;
 	background-color: var(--gray2);
+	outline: none;
 }
 
 button svg {
-	font-size: calc(1.5rem + 1vw);
+	font-size: 2.2rem;
 	color: #f3f3f3;
+}
+
+.left.none,
+.right.none {
+	display: none;
 }
 
 .right {
 	right: 0;
+	margin-right: 0.5rem;
 }
 
 .left {
 	left: 0;
 }
 
+article {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+}
+
 /* slider container */
 .slider__container {
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	top: 2rem;
-	left: 0;
-	position: absolute;
-	width: 100%;
+	width: min(500px, 75vw);
 	height: 100%;
-	opacity: 0;
+	margin-inline: auto;
+
+	/* transition: all 0.5s ease; */
+	/* animation: move 1s forwards; */
 }
+
+/* @keyframes move {
+	0% {
+		opacity: 0;
+	}
+	25% {
+		opacity: 0.25;
+	}
+	50% {
+		opacity: 0.5;
+	}
+	75% {
+		opacity: 0.75;
+	}
+	100% {
+		opacity: 1;
+	}
+} */
 
 img {
 	display: block;
-	width: min(120px, 30vw);
-	height: min(120px, 30vw);
+	width: 120px;
+	height: 120px;
 	object-fit: cover;
 	border-radius: 50%;
 	box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
@@ -131,42 +152,30 @@ img {
 	color: var(--gold);
 }
 
-/* slider positions */
-.slider__container.default {
-	transform: translateX(100%);
-}
-
-.slider__container.active {
-	animation: active 0.3s ease forwards;
-}
-
-@keyframes active {
-	0% {
-		transform: translateX(-100%);
-		opacity: 0;
+@media screen and (max-width: 670px) {
+	.app {
+		width: 400px;
 	}
 
-	25% {
-		transform: translateX(-75%);
-		opacity: 0.25;
+	section {
+		width: 400px;
 	}
 
-	50% {
-		transform: translateX(-50%);
-		opacity: 0.5;
-	}
-
-	75% {
-		opacity: 0.75;
-	}
-
-	100% {
-		transform: translateX(0%);
-		opacity: 1;
+	.slider__container {
+		width: 400px;
 	}
 }
 
-.slider__container.previous {
-	transform: translateX(-100%);
-	opacity: 0;
-}
+@media screen and (max-width: 475px) {
+	.app {
+		width: 300px;
+	}
+
+	section {
+		width: 300px;
+	}
+
+	.slider__container {
+		width: 300px;
+	}
+} ;
