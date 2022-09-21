@@ -76,6 +76,7 @@ button svg {
 article {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
+	transition: all 0.4s ease-out;
 }
 
 /* slider container */

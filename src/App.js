@@ -3,14 +3,13 @@ import "./App.css";
 import data from "./data";
 import { FiChevronRight, FiChevronLeft } from "react-icons/fi";
 import { FaQuoteRight } from "react-icons/fa";
-import { useEffect } from "react";
 
 function App() {
 	const [people, setPeople] = useState(data);
 	const [location, setLocation] = useState(0);
 	const [clickCount, setClickCount] = useState(0);
 
-	const scroller = useRef(null);
+	const scroller = useRef();
 
 	const handleClick = (direction) => {
 		let newCount = clickCount + 1;
